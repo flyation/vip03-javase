@@ -1,24 +1,26 @@
-package com.southwind;
+package com.southwind.homework4;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.OutputStream;
 
-public class Test2 {
+public class Work5 {
     public static void main(String[] args) {
-        OutputStream fos = null;
+        FileReader fr = null;
         try {
-            fos = new FileOutputStream("d:/copy.txt");
-            byte[] bytes = {72, 101, 108, 108, 111};
-            fos.write(bytes, 2, 3);
+            fr = new FileReader("E:\\简介.txt");
+            char[] chars = new char[10];
+            int len = 0;
+            while ((len = fr.read(chars)) != -1) {
+                System.out.println(chars);
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
-                fos.close();
+                fr.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
