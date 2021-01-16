@@ -1,4 +1,4 @@
-package com.southwind.MyIO;
+package com.southwind.myIO;
 
 import java.io.*;
 
